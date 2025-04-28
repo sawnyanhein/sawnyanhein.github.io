@@ -1,41 +1,37 @@
-/* Global styles */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-}
-
-/* Header styles */
-.site-header {
-    background-color: #333;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-}
-
-.site-header nav a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-}
-
-/* Card styles */
-.card {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* Footer styles */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beautiful Design</title>
+  <!-- Add Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora&display=swap" rel="stylesheet">
+  <style>
+    /* Paste the CSS here */
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">Beautiful Design</h1>
+    
+    <div class="card floating-element">
+      <h2>Gradient Card</h2>
+      <p>This card has a beautiful gradient background and hover effect.</p>
+      <button class="btn btn-primary">Click Me</button>
+    </div>
+    
+    <div class="glass-panel mt-2">
+      <h2>Glass Panel</h2>
+      <p>This element has a glassmorphism effect.</p>
+    </div>
+    
+    <div class="neumorphic mt-2">
+      <div class="input-group">
+        <input type="text" class="input-field" id="name" placeholder=" ">
+        <label for="name" class="input-label">Your Name</label>
+      </div>
+      <button class="btn btn-outline">Submit</button>
+    </div>
+  </div>
+</body>
+</html>
