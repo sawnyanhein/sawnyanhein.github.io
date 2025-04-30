@@ -512,10 +512,11 @@
     <title>About Me - Karen Culture & Technology</title>
     <style>
         :root {
-            --primary: #2b580c;
-            --secondary: #639a67;
-            --light: #d8ebb5;
+            --primary: #2b580c; /* ကရင်ရိုးရာအစိမ်းရောင်အရင့် */
+            --secondary: #639a67; /* သဘာဝအစိမ်းရောင် */
+            --light: #d8ebb5; /* အစိမ်းနုရောင် */
             --dark: #1a1a1a;
+            --text-light: #f5f5f5;
         }
         
         body {
@@ -524,8 +525,20 @@
             color: var(--dark);
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
+            padding: 0;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
         }
         
         header {
@@ -535,11 +548,30 @@
             color: white;
             border-radius: 10px;
             margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: repeating-linear-gradient(
+                45deg,
+                var(--light),
+                var(--light) 10px,
+                var(--secondary) 10px,
+                var(--secondary) 20px
+            );
         }
         
         h1 {
             margin: 0;
             font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         
         h2 {
@@ -555,6 +587,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             margin-bottom: 1.5rem;
+            border-left: 5px solid var(--primary);
         }
         
         .culture-badge {
@@ -565,6 +598,7 @@
             border-radius: 20px;
             margin: 5px;
             font-size: 0.9rem;
+            font-weight: bold;
         }
         
         .skills-container {
@@ -578,6 +612,12 @@
             color: white;
             padding: 8px 15px;
             border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .skill:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
         
         footer {
@@ -585,6 +625,8 @@
             margin-top: 2rem;
             padding: 1rem;
             color: var(--primary);
+            background-color: rgba(255,255,255,0.8);
+            border-radius: 8px;
         }
         
         #cultural-output {
@@ -592,57 +634,99 @@
             padding: 15px;
             border-radius: 5px;
             margin-top: 10px;
+            border-left: 3px solid var(--primary);
+        }
+        
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        button:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        /* ကရင်ရိုးရာဒီဇိုင်းအစိတ်အပိုင်း */
+        .karen-pattern {
+            height: 20px;
+            background: repeating-linear-gradient(
+                45deg,
+                var(--primary),
+                var(--primary) 10px,
+                var(--light) 10px,
+                var(--light) 20px
+            );
+            margin: 1rem 0;
+            border-radius: 3px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Hello, I'm [Your Name]</h1>
-        <p>Karen Culture Enthusiast & Tech Learner</p>
-    </header>
-    
-    <div class="card">
-        <h2>About Me</h2>
-        <p>I'm a student at Taung Kalay Monastic Education School passionate about preserving Karen culture while embracing modern technology.</p>
+    <div class="container">
+        <header>
+            <h1>Hello, I'm [Your Name]</h1>
+            <p>Karen Culture Enthusiast & Tech Learner</p>
+        </header>
         
-        <div>
-            <span class="culture-badge">Language Preservation</span>
-            <span class="culture-badge">Cultural Heritage</span>
-            <span class="culture-badge">Education</span>
-            <span class="culture-badge">Technology</span>
-        </div>
-    </div>
-    
-    <div class="card">
-        <h2>My Mission</h2>
-        <p id="mission-statement">Combining traditional knowledge with modern technology to empower Karen youth.</p>
+        <div class="karen-pattern"></div>
         
-        <button onclick="showCulturalGoals()">See My Cultural Goals</button>
-        <div id="cultural-output"></div>
-    </div>
-    
-    <div class="card">
-        <h2>Skills & Interests</h2>
-        <div class="skills-container">
-            <div class="skill">HTML/CSS</div>
-            <div class="skill">JavaScript</div>
-            <div class="skill">Karen Language</div>
-            <div class="skill">Cultural Research</div>
-            <div class="skill">Education</div>
+        <div class="card">
+            <h2>About Me</h2>
+            <p>I'm a student at Taung Kalay Monastic Education School passionate about preserving Karen culture while embracing modern technology.</p>
+            
+            <div>
+                <span class="culture-badge">Language Preservation</span>
+                <span class="culture-badge">Cultural Heritage</span>
+                <span class="culture-badge">Education</span>
+                <span class="culture-badge">Technology</span>
+            </div>
         </div>
+        
+        <div class="karen-pattern"></div>
+        
+        <div class="card">
+            <h2>My Mission</h2>
+            <p id="mission-statement">Combining traditional knowledge with modern technology to empower Karen youth.</p>
+            
+            <button onclick="showCulturalGoals()">See My Cultural Goals</button>
+            <div id="cultural-output"></div>
+        </div>
+        
+        <div class="karen-pattern"></div>
+        
+        <div class="card">
+            <h2>Skills & Interests</h2>
+            <div class="skills-container">
+                <div class="skill">HTML/CSS</div>
+                <div class="skill">JavaScript</div>
+                <div class="skill">Karen Language</div>
+                <div class="skill">Cultural Research</div>
+                <div class="skill">Education</div>
+            </div>
+        </div>
+        
+        <div class="karen-pattern"></div>
+        
+        <div class="card">
+            <h2>Current Projects</h2>
+            <ul id="projects-list">
+                <!-- Projects will be added by JavaScript -->
+            </ul>
+        </div>
+        
+        <footer>
+            <p>Let's connect and work together to preserve Karen heritage!</p>
+            <p>Email: your@email.com</p>
+        </footer>
     </div>
-    
-    <div class="card">
-        <h2>Current Projects</h2>
-        <ul id="projects-list">
-            <!-- Projects will be added by JavaScript -->
-        </ul>
-    </div>
-    
-    <footer>
-        <p>Let's connect and work together to preserve Karen heritage!</p>
-        <p>Email: your@email.com</p>
-    </footer>
 
     <script>
         // Cultural goals data
@@ -691,9 +775,27 @@
             mission.style.color = colors[colorIndex];
             colorIndex = (colorIndex + 1) % colors.length;
         }, 2000);
+        
+        // Add animation to skills on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const skills = document.querySelectorAll('.skill');
+            skills.forEach((skill, index) => {
+                setTimeout(() => {
+                    skill.style.opacity = '1';
+                    skill.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
     </script>
 </body>
-</html>
+</html>        
+      
+        
+       
+   
+   
+ 
+   
                 <h2>About Me ကျွန်တော်အကြောင်း</h2>
                 <p>Here's a little about who I am and what I do</p>
             </div>
