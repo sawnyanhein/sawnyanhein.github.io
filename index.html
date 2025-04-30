@@ -503,69 +503,198 @@
     <section class="section" id="about">
         <div class="container">
             <div class="section-title">
-# About Me
 
-```javascript
-const aboutMe = {
-  name: "Your Name",
-  education: "Taung Kalay Monastic Education School",
-  ethnicity: "Karen",
-  passions: [
-    "Cultural Preservation", 
-    "Technology",
-    "Education"
-  ],
-  goals: function() {
-    return [
-      "Preserve Karen language and traditions",
-      "Bridge technology and cultural heritage",
-      "Empower Karen youth through education",
-      "Promote Karen arts globally"
-    ];
-  }
-};
-
-console.log(aboutMe.goals());
-                class CulturalProjects {
-  constructor() {
-    this.current = [
-      "Digitizing Karen folktales",
-      "Creating language learning apps",
-      "Documenting traditional music"
-    ];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Karen Culture & Technology</title>
+    <style>
+        :root {
+            --primary: #2b580c;
+            --secondary: #639a67;
+            --light: #d8ebb5;
+            --dark: #1a1a1a;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            text-align: center;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 5px;
+            margin-top: 2rem;
+        }
+        
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+        
+        .culture-badge {
+            display: inline-block;
+            background-color: var(--light);
+            color: var(--primary);
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill {
+            background-color: var(--secondary);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem;
+            color: var(--primary);
+        }
+        
+        #cultural-output {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hello, I'm [Your Name]</h1>
+        <p>Karen Culture Enthusiast & Tech Learner</p>
+    </header>
     
-    this.future = [
-      "Karen cultural database",
-      "Virtual museum project",
-      "Youth mentorship program"
-    ];
-  }
-}
+    <div class="card">
+        <h2>About Me</h2>
+        <p>I'm a student at Taung Kalay Monastic Education School passionate about preserving Karen culture while embracing modern technology.</p>
+        
+        <div>
+            <span class="culture-badge">Language Preservation</span>
+            <span class="culture-badge">Cultural Heritage</span>
+            <span class="culture-badge">Education</span>
+            <span class="culture-badge">Technology</span>
+        </div>
+    </div>
+    
+    <div class="card">
+        <h2>My Mission</h2>
+        <p id="mission-statement">Combining traditional knowledge with modern technology to empower Karen youth.</p>
+        
+        <button onclick="showCulturalGoals()">See My Cultural Goals</button>
+        <div id="cultural-output"></div>
+    </div>
+    
+    <div class="card">
+        <h2>Skills & Interests</h2>
+        <div class="skills-container">
+            <div class="skill">HTML/CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Karen Language</div>
+            <div class="skill">Cultural Research</div>
+            <div class="skill">Education</div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <h2>Current Projects</h2>
+        <ul id="projects-list">
+            <!-- Projects will be added by JavaScript -->
+        </ul>
+    </div>
+    
+    <footer>
+        <p>Let's connect and work together to preserve Karen heritage!</p>
+        <p>Email: your@email.com</p>
+    </footer>
 
-const myProjects = new CulturalProjects();
-                const skills = {
-  languages: ["JavaScript", "HTML", "CSS"],
-  tools: ["Git", "VS Code", "Figma"],
-  learning: ["React", "Node.js", "MongoDB"]
-};
-
-                
-Key features of this version:
-
-1. Uses real JavaScript syntax that will display properly on GitHub
-2. Maintains your cultural focus through object properties
-3. Shows both your technical and cultural interests
-4. Includes interactive-looking code blocks (though they're display-only)
-5. Has the same clean layout with contact badges
-6. Uses class structure to show your projects
-
-To use this:
-1. Create a new repository named exactly your GitHub username
-2. Add this as README.md
-3. Customize all the placeholder values (name, email, etc.)
-4. Add any real JavaScript projects you've worked on
-
-The code blocks will render nicely on your profile while showcasing both your cultural mission and technical interests.                <h2>About Me ကျွန်တော်အကြောင်း</h2>
+    <script>
+        // Cultural goals data
+        const culturalGoals = [
+            "Digitize Karen folktales and literature",
+            "Develop Karen language learning resources",
+            "Create a digital archive of traditional music",
+            "Build educational apps for Karen youth",
+            "Promote cross-cultural understanding"
+        ];
+        
+        // Current projects data
+        const projects = [
+            "Karen Language Documentation",
+            "Cultural Heritage Website",
+            "Youth Education Program",
+            "Traditional Arts Preservation"
+        ];
+        
+        // Display projects
+        const projectsList = document.getElementById('projects-list');
+        projects.forEach(project => {
+            const li = document.createElement('li');
+            li.textContent = project;
+            projectsList.appendChild(li);
+        });
+        
+        // Show cultural goals when button clicked
+        function showCulturalGoals() {
+            const outputDiv = document.getElementById('cultural-output');
+            outputDiv.innerHTML = '<h3>My Cultural Preservation Goals:</h3><ul>';
+            
+            culturalGoals.forEach(goal => {
+                outputDiv.innerHTML += `<li>${goal}</li>`;
+            });
+            
+            outputDiv.innerHTML += '</ul>';
+        }
+        
+        // Animate mission statement
+        const mission = document.getElementById('mission-statement');
+        let colors = ['#2b580c', '#639a67', '#d8ebb5', '#1a1a1a'];
+        let colorIndex = 0;
+        
+        setInterval(() => {
+            mission.style.color = colors[colorIndex];
+            colorIndex = (colorIndex + 1) % colors.length;
+        }, 2000);
+    </script>
+</body>
+</html>
+                <h2>About Me ကျွန်တော်အကြောင်း</h2>
                 <p>Here's a little about who I am and what I do</p>
             </div>
             <div class="about-content">
