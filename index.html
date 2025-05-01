@@ -3,1069 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saw Nyan Hein | Personal Website</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Global Styles */
-        :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-            --text-color: #333;
-            --text-light: #7f8c8d;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--light-color);
-        }
-        
-        a {
-            text-decoration: none;
-            color: var(--primary-color);
-            transition: all 0.3s ease;
-        }
-        
-        a:hover {
-            color: var(--accent-color);
-        }
-        
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            background: var(--accent-color);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Header */
-        header {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            z-index: 100;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--dark-color);
-        }
-        
-        .logo span {
-            color: var(--primary-color);
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
-        .nav-links a {
-            color: var(--dark-color);
-            font-weight: 500;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-        
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 80px;
-            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(231, 76, 60, 0.1) 100%);
-        }
-        
-        .hero-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        
-        .hero-text {
-            flex: 1;
-            padding-right: 50px;
-        }
-        
-        .hero-text h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            color: var(--dark-color);
-        }
-        
-        .hero-text h1 span {
-            color: var(--primary-color);
-        }
-        
-        .hero-text p {
-            font-size: 18px;
-            color: var(--text-light);
-            margin-bottom: 30px;
-            max-width: 500px;
-        }
-        
-        .hero-image {
-            flex: 1;
-            text-align: center;
-        }
-        
-        .hero-image img {
-            max-width: 100%;
-            border-radius: 50%;
-            border: 5px solid white;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .social-icons {
-            display: flex;
-            margin-top: 30px;
-        }
-        
-        .social-icons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: white;
-            border-radius: 50%;
-            margin-right: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .social-icons a:hover {
-            background: var(--primary-color);
-            color: white;
-            transform: translateY(-5px);
-        }
-        
-        /* About Section */
-        .section {
-            padding: 100px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title h2 {
-            font-size: 36px;
-            color: var(--dark-color);
-            margin-bottom: 15px;
-        }
-        
-        .section-title p {
-            color: var(--text-light);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        
-        .about-text {
-            flex: 1;
-            padding-right: 50px;
-        }
-        
-        .about-text h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: var(--dark-color);
-        }
-        
-        .about-text p {
-            margin-bottom: 20px;
-            color: var(--text-light);
-        }
-        
-        .skills {
-            flex: 1;
-        }
-        
-        .skill-item {
-            margin-bottom: 25px;
-        }
-        
-        .skill-info {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-        
-        .skill-bar {
-            height: 10px;
-            background: #ddd;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        
-        .skill-progress {
-            height: 100%;
-            background: var(--primary-color);
-            border-radius: 5px;
-        }
-        
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .project-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .project-image {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: all 0.5s ease;
-        }
-        
-        .project-card:hover .project-image img {
-            transform: scale(1.1);
-        }
-        
-        .project-info {
-            padding: 20px;
-        }
-        
-        .project-info h3 {
-            margin-bottom: 10px;
-            color: var(--dark-color);
-        }
-        
-        .project-info p {
-            color: var(--text-light);
-            margin-bottom: 15px;
-        }
-        
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 15px;
-        }
-        
-        .project-tags span {
-            background: #eee;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            color: var(--text-light);
-        }
-        
-        /* Contact Section */
-        .contact {
-            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(231, 76, 60, 0.1) 100%);
-        }
-        
-        .contact-content {
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .contact-info {
-            flex: 1;
-            padding-right: 50px;
-        }
-        
-        .contact-info h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: var(--dark-color);
-        }
-        
-        .contact-info p {
-            color: var(--text-light);
-            margin-bottom: 30px;
-        }
-        
-        .contact-details {
-            margin-bottom: 30px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        .contact-item i {
-            width: 40px;
-            height: 40px;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-        }
-        
-        .contact-form {
-            flex: 1;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            color: var(--dark-color);
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: all 0.3s ease;
-        }
-        
-        .form-control:focus {
-            border-color: var(--primary-color);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--dark-color);
-            color: white;
-            text-align: center;
-            padding: 30px 0;
-        }
-        
-        footer p {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            margin-bottom: 20px;
-        }
-        
-        .footer-links li {
-            margin: 0 15px;
-        }
-        
-        .footer-links a {
-            color: white;
-        }
-        
-        .footer-links a:hover {
-            color: var(--primary-color);
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-content, .about-content, .contact-content {
-                flex-direction: column;
-            }
-            
-            .hero-text, .about-text, .contact-info {
-                padding-right: 0;
-                margin-bottom: 50px;
-                text-align: center;
-            }
-            
-            .hero-text h1 {
-                font-size: 36px;
-            }
-            
-            .social-icons {
-                justify-content: center;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">Saw<span>Nyan Hein</span></div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Hi, I'm <span>Saw Nyan Hein</span></h1>
-                    <p>I'm a passionate web developer and designer creating beautiful, functional websites and applications. I love turning ideas into reality through code.</p>
-                    <a href="#contact" class="btn">Get In Touch</a>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <img src="profile.jpeg">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section" id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Me</h2>
-                <p>Here's a little about who I am and what I do</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>I'm a Web Developer based in New York</h3>
-                    <p>With over 5 years of experience in web development, I've worked with startups and established companies to build responsive, user-friendly websites and web applications.</p>
-                    <p>I specialize in front-end development with React and Vue.js, but I'm also comfortable working with back-end technologies like Node.js and Django.</p>
-                    <p>When I'm not coding, you can find me hiking, reading sci-fi novels, or experimenting with new recipes in the kitchen.</p>
-                </div>
-                <div class="skills">
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>HTML/CSS</span>
-                            <span>95%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 95%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>JavaScript</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>React</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Node.js</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 80%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>UI/UX Design</span>
-                            <span>75%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 75%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="section" id="projects">
-        <div class="container">
-            <div class="section-title">
-                <h2>My Projects</h2>
-                <p>Some of my recent work and projects</p>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Project 1">
-                    </div>
-                    <div class="project-info">
-                        <h3>E-commerce Platform</h3>
-                        <p>A full-featured e-commerce platform built with React and Node.js with payment integration.</p>
-                        <div class="project-tags">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>MongoDB</span>
-                        </div>
-                        <a href="#" class="btn">View Project</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Project 2">
-                    </div>
-                    <div class="project-info">
-                        <h3>Task Management App</h3>
-                        <p>A productivity app for managing tasks and projects with team collaboration features.</p>
-                        <div class="project-tags">
-                            <span>Vue.js</span>
-                            <span>Firebase</span>
-                            <span>Real-time</span>
-                        </div>
-                        <a href="#" class="btn">View Project</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Project 3">
-                    </div>
-                    <div class="project-info">
-                        <h3>Portfolio Website</h3>
-                        <p>A custom portfolio website for a photographer with image gallery and contact form.</p>
-                        <div class="project-tags">
-                            <span>HTML/CSS</span>
-                            <span>JavaScript</span>
-                            <span>Responsive</span>
-                        </div>
-                        <a href="#" class="btn">View Project</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section contact" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Get In Touch</h2>
-                <p>Feel free to reach out for collaborations or just a friendly hello</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Let's talk about everything!</h3>
-                    <p>I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>sawnyanhein0@gmail.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>09671690693</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Taung Galay, Ba-an</span>
-                        </div>
-                    </div>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" class="form-control" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; Saw Nyan Hein. All rights reserved.</p>
-            <ul class="footer-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <p>Made with ❤️ by Saw Nyan Hein</p>
-        </div>
-    </footer>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elegant Modern Design</title>
-    <style>
-        /* Smart CSS Variables for easy theming */
-        :root {
-            --primary-color: #4361ee;
-            --secondary-color: #3f37c9;
-            --accent-color: #4895ef;
-            --light-color: #f8f9fa;
-            --dark-color: #212529;
-            --success-color: #4cc9f0;
-            --warning-color: #f72585;
-            --border-radius: 8px;
-            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-
-        /* Smart Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--dark-color);
-            background-color: var(--light-color);
-            padding: 0;
-            margin: 0;
-        }
-
-        /* Beautiful Typography */
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            display: inline-block;
-        }
-
-        p {
-            margin-bottom: 1rem;
-        }
-
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        a:hover {
-            color: var(--secondary-color);
-            text-decoration: underline;
-        }
-
-        /* Beautiful Layout */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Smart Navigation */
-        nav {
-            background-color: white;
-            box-shadow: var(--box-shadow);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            font-weight: 500;
-        }
-
-        /* Beautiful Hero Section */
-        .hero {
-            padding: 5rem 0;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(67, 97, 238, 0.1) 0%, rgba(72, 149, 239, 0.1) 100%);
-        }
-
-        .hero p {
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            font-size: 1.1rem;
-        }
-
-        /* Smart Button Styles */
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            border-radius: var(--border-radius);
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        /* Beautiful Card Component */
-        .card {
-            background-color: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            overflow: hidden;
-            transition: var(--transition);
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .card-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-body {
-            padding: 1.5rem;
-        }
-
-        /* Smart Grid System */
-        .grid {
-            display: grid;
-            gap: 2rem;
-        }
-
-        @media (min-width: 768px) {
-            .grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 992px) {
-            .grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        /* Beautiful Features Section */
-        .features {
-            padding: 5rem 0;
-            background-color: white;
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-        }
-
-        /* Smart Footer */
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 3rem 0;
-        }
-
-        .footer-content {
-            display: grid;
-            gap: 2rem;
-        }
-
-        @media (min-width: 768px) {
-            .footer-content {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .footer-column h3 {
-            color: white;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-column a {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .footer-column a:hover {
-            color: white;
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 2rem;
-            margin-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Smart Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .animate {
-            animation: fadeIn 0.8s ease forwards;
-        }
-
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
-        .delay-3 { animation-delay: 0.6s; }
-
-        /* Smart Utility Classes */
-        .text-center { text-align: center; }
-        .mt-1 { margin-top: 1rem; }
-        .mt-2 { margin-top: 2rem; }
-        .mb-1 { margin-bottom: 1rem; }
-        .mb-2 { margin-bottom: 2rem; }
-        .py-1 { padding-top: 1rem; padding-bottom: 1rem; }
-        .py-2 { padding-top: 2rem; padding-bottom: 2rem; }
-    </style>
-</head>
-<body>
-    <!-- Beautiful Navigation -->
-    <nav>
-        <div class="container navbar">
-            <div class="logo">Elegant</div>
-            <div class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">Features</a>
-                <a href="#">Pricing</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Beautiful Hero Section -->
-    <section class="hero">
-        <div class="container animate">
-            <h1>Create Beautiful, Smart Designs</h1>
-            <p class="animate delay-1">A modern, responsive HTML/CSS template built with smart techniques and beautiful aesthetics to make your website stand out.</p>
-            <div class="animate delay-2">
-                <a href="#" class="btn btn-primary">Get Started</a>
-                <a href="#" class="btn btn-outline">Learn More</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Beautiful Features Section -->
-    <section class="features">
-        <div class="container">
-            <h2 class="text-center mb-2">Smart Features</h2>
-            <div class="grid">
-                <div class="card animate">
-                    <div class="card-body">
-                        <div class="feature-icon">⚡</div>
-                        <h3>Fast Performance</h3>
-                        <p>Optimized code for blazing fast loading times and smooth animations.</p>
-                    </div>
-                </div>
-                <div class="card animate delay-1">
-                    <div class="card-body">
-                        <div class="feature-icon">🎨</div>
-                        <h3>Beautiful Design</h3>
-                        <p>Modern aesthetics with careful attention to typography, spacing, and colors.</p>
-                    </div>
-                </div>
-                <div class="card animate delay-2">
-                    <div class="card-body">
-                        <div class="feature-icon">📱</div>
-                        <h3>Fully Responsive</h3>
-                        <p>Looks great on all devices from mobile phones to large desktop screens.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Smart Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Elegant</h3>
-                    <p>Creating beautiful, smart designs for the modern web.</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Features</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">About</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact</h3>
-                    <ul>
-                        <li><a href="mailto:hello@example.com">hello@example.com</a></li>
-                        <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 Elegant Designs. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karen Cultural Heritage</title>
     <style>
         :root {
@@ -1085,15 +22,15 @@
         
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f9f9f9;
             color: var(--text-dark);
             line-height: 1.7;
             overflow-x: hidden;
+            background-color: #f9f9f9;
         }
         
         .hero {
-            background: linear-gradient(135deg, rgba(43, 88, 12, 0.9), rgba(100, 130, 60, 0.8)),
-                        url('karen-background.jpg') center/cover no-repeat;
+            background: linear-gradient(135deg, rgba(43, 88, 12, 0.7), rgba(100, 130, 60, 0.6)),
+                        url('https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1790&q=80') center/cover no-repeat;
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -1112,29 +49,29 @@
             left: 0;
             width: 100%;
             height: 100px;
-            background: url('karen-pattern.png') repeat-x;
-            background-size: contain;
-            opacity: 0.7;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%232b580c"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%232b580c"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%232b580c"/></svg>') repeat-x;
+            background-size: cover;
+            transform: rotate(180deg);
         }
         
         .hero-content {
             max-width: 800px;
             z-index: 1;
+            animation: fadeIn 1.5s ease;
         }
         
         h1 {
             font-size: 3.5rem;
             color: var(--text-light);
             margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-            animation: fadeInDown 1s ease;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
         }
         
         .hero p {
             font-size: 1.2rem;
             color: var(--karen-light);
             margin-bottom: 2rem;
-            animation: fadeInUp 1s ease 0.3s both;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
         
         .btn {
@@ -1146,14 +83,15 @@
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            animation: fadeIn 1s ease 0.6s both;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            animation: pulse 2s infinite;
         }
         
         .btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
             background: #e8c252;
+            animation: none;
         }
         
         .container {
@@ -1164,6 +102,7 @@
         
         section {
             margin-bottom: 5rem;
+            position: relative;
         }
         
         h2 {
@@ -1201,6 +140,7 @@
             overflow: hidden;
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
             transition: transform 0.5s ease;
+            border: 5px solid white;
         }
         
         .about-image:hover {
@@ -1211,6 +151,23 @@
             width: 100%;
             height: auto;
             display: block;
+        }
+        
+        .culture-section {
+            background: linear-gradient(rgba(43, 88, 12, 0.05), rgba(43, 88, 12, 0.1));
+            padding: 4rem 0;
+            margin: 4rem 0;
+            position: relative;
+        }
+        
+        .culture-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 15px;
+            background: linear-gradient(90deg, var(--karen-green), var(--karen-gold), var(--karen-green));
         }
         
         .skills-container {
@@ -1227,6 +184,7 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
+            border-top: 3px solid var(--karen-gold);
         }
         
         .skill-card:hover {
@@ -1288,6 +246,17 @@
             text-align: center;
             padding: 3rem 0;
             margin-top: 5rem;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 15px;
+            background: linear-gradient(90deg, var(--karen-gold), var(--karen-green), var(--karen-gold));
         }
         
         .footer-content {
@@ -1305,11 +274,20 @@
         .social-link {
             color: white;
             font-size: 1.5rem;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.1);
         }
         
         .social-link:hover {
             color: var(--karen-gold);
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
         }
         
         /* Animations */
@@ -1318,26 +296,10 @@
             to { opacity: 1; }
         }
         
-        @keyframes fadeInDown {
-            from { 
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInUp {
-            from { 
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0);
-            }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
         
         /* Responsive */
@@ -1362,82 +324,84 @@
     <header class="hero">
         <div class="hero-content">
             <h1>Karen Cultural Heritage</h1>
-            <p>Preserving our traditions, embracing the future</p>
-            <a href="#about" class="btn">Explore More</a>
+            <p>Preserving our traditions at the foot of Mount Zwekabin</p>
+            <a href="#about" class="btn">Explore Our Culture</a>
         </div>
     </header>
     
     <main class="container">
         <section id="about">
-            <h2>About Our Culture</h2>
+            <h2>About Our Heritage</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>The Karen people have a rich cultural heritage spanning centuries. Our traditions, language, and way of life are treasures that must be preserved for future generations.</p>
-                    <p>Through this initiative, we aim to document and share our cultural practices, from traditional weaving and music to our unique agricultural methods and spiritual beliefs.</p>
-                    <p>By combining modern technology with traditional knowledge, we can ensure our culture continues to thrive in the digital age.</p>
+                    <p>The Karen people have thrived in the shadow of Mount Zwekabin for generations. Our sacred mountain stands as a symbol of resilience and connection to our ancestral lands.</p>
+                    <p>From traditional weaving patterns inspired by the mountain's contours to folktales born from its slopes, Zwekabin is woven into every aspect of Karen culture.</p>
+                    <p>This project documents our unique relationship with the mountain and surrounding ecosystems.</p>
                 </div>
                 <div class="about-image">
-                    <img src="karen-traditional.jpg" alt="Karen traditional culture">
+                    <img src="https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Mount Zwekabin">
                 </div>
             </div>
         </section>
         
-        <section id="skills">
-            <h2>Cultural Preservation Skills</h2>
-            <div class="skills-container">
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-language"></i>
+        <div class="culture-section">
+            <section id="skills">
+                <h2>Mountain-Inspired Traditions</h2>
+                <div class="skills-container">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <h3>Mountain Agriculture</h3>
+                        <p>Traditional farming techniques adapted to Zwekabin's slopes and seasons.</p>
                     </div>
-                    <h3>Language Documentation</h3>
-                    <p>Recording and preserving the Karen language in its various dialects through written and audio formats.</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-camera"></i>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <h3>Watershed Knowledge</h3>
+                        <p>Ancient understanding of the mountain's water systems and springs.</p>
                     </div>
-                    <h3>Cultural Photography</h3>
-                    <p>Documenting traditional ceremonies, clothing, and daily life through professional photography.</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-laptop-code"></i>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-om"></i>
+                        </div>
+                        <h3>Spiritual Practices</h3>
+                        <p>Sacred rituals connected to the mountain's natural features.</p>
                     </div>
-                    <h3>Digital Archiving</h3>
-                    <p>Creating digital repositories for cultural artifacts and historical documents.</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-book"></i>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <h3>Textile Patterns</h3>
+                        <p>Weaving designs that mirror the mountain's ridges and forests.</p>
                     </div>
-                    <h3>Storytelling</h3>
-                    <p>Collecting and sharing traditional Karen folktales and oral histories.</p>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
         
         <section id="projects">
-            <h2>Current Projects</h2>
+            <h2>Zwekabin Conservation Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="project-language.jpg" alt="Language Project" class="project-image">
+                    <img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Ecology Project" class="project-image">
                     <div class="project-overlay">
-                        <h3>Karen Language App</h3>
-                        <p>An interactive mobile application for learning the Karen language.</p>
+                        <h3>Mountain Ecology</h3>
+                        <p>Documenting unique flora and fauna of the Zwekabin region.</p>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="project-weaving.jpg" alt="Weaving Project" class="project-image">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Water Project" class="project-image">
                     <div class="project-overlay">
-                        <h3>Traditional Weaving Archive</h3>
-                        <p>Documenting and preserving traditional Karen weaving techniques.</p>
+                        <h3>Water Heritage</h3>
+                        <p>Preserving traditional water management practices.</p>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="project-music.jpg" alt="Music Project" class="project-image">
+                    <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Trail Project" class="project-image">
                     <div class="project-overlay">
-                        <h3>Karen Music Preservation</h3>
-                        <p>Recording and analyzing traditional Karen musical instruments and songs.</p>
+                        <h3>Sacred Trails</h3>
+                        <p>Mapping and maintaining ancient mountain pathways.</p>
                     </div>
                 </div>
             </div>
@@ -1446,20 +410,20 @@
     
     <footer>
         <div class="footer-content">
-            <h2>Connect With Us</h2>
-            <p>Join our efforts to preserve and promote Karen cultural heritage</p>
+            <h2>Join Our Conservation Efforts</h2>
+            <p>Help preserve the cultural heritage of Mount Zwekabin</p>
             <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                 <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                 <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
             </div>
-            <p>&copy; 2023 Karen Cultural Heritage Project. All rights reserved.</p>
+            <p>&copy; 2023 Zwekabin Heritage Project. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
+        // Smooth scrolling for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1469,13 +433,13 @@
             });
         });
         
-        // Animate elements when they come into view
+        // Animate elements on scroll
         const animateOnScroll = () => {
             const elements = document.querySelectorAll('.about-content, .skill-card, .project-card');
+            const windowHeight = window.innerHeight;
             
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
                 
                 if (elementPosition < windowHeight - 100) {
                     element.style.opacity = '1';
@@ -1484,7 +448,7 @@
             });
         };
         
-        // Set initial state for animation
+        // Set initial state
         document.querySelectorAll('.skill-card, .project-card').forEach(card => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(30px)';
@@ -1495,18 +459,25 @@
         document.querySelector('.about-content').style.transform = 'translateY(30px)';
         document.querySelector('.about-content').style.transition = 'all 0.5s ease 0.3s';
         
-        // Run animation on scroll
+        // Add scroll event listener
         window.addEventListener('scroll', animateOnScroll);
         window.addEventListener('load', animateOnScroll);
         
+        // Mountain animation effect
+        const hero = document.querySelector('.hero');
+        window.addEventListener('scroll', function() {
+            const scrollValue = window.scrollY;
+            hero.style.backgroundPositionY = scrollValue * 0.5 + 'px';
+        });
+        
         // Project card interaction
         document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.querySelector('.project-overlay').style.transform = 'translateY(0)';
+            card.addEventListener('mouseenter', () => {
+                card.querySelector('.project-overlay').style.transform = 'translateY(0)';
             });
             
-            card.addEventListener('mouseleave', function() {
-                this.querySelector('.project-overlay').style.transform = 'translateY(100px)';
+            card.addEventListener('mouseleave', () => {
+                card.querySelector('.project-overlay').style.transform = 'translateY(100px)';
             });
         });
     </script>
