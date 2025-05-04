@@ -1370,5 +1370,322 @@
         document.addEventListener('DOMContentLoaded', lazyLoad);
     </script>
 </body>
-</html>                
+</html>  
+
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ကရင်ယဉ်ကျေးမှုဒစ်ဂျစ်တယ်စာကြည့်တိုက်</title>
+    <style>
+        :root {
+            --karen-green: #2b580c;
+            --karen-light: #d8ebb5;
+            --karen-gold: #d4af37;
+            --karen-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Padauk', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--karen-green), var(--karen-dark));
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 15px;
+            background: repeating-linear-gradient(
+                45deg,
+                var(--karen-gold),
+                var(--karen-gold) 10px,
+                var(--karen-green) 10px,
+                var(--karen-green) 20px
+            );
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+        }
+        
+        /* စာအုပ်စဉ်ကဏ္ဍ */
+        .category-section {
+            margin-bottom: 3rem;
+        }
+        
+        .category-title {
+            color: var(--karen-green);
+            border-bottom: 2px solid var(--karen-gold);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .book-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .book-cover {
+            height: 200px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+        }
+        
+        .book-info {
+            padding: 1rem;
+        }
+        
+        .book-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--karen-dark);
+        }
+        
+        .book-author {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .book-desc {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .read-btn {
+            display: inline-block;
+            background: var(--karen-green);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+        }
+        
+        .read-btn:hover {
+            background: var(--karen-dark);
+        }
+        
+        /* ရှာဖွေရန်အတွက် */
+        .search-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+        
+        .search-box {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+            font-size: 1rem;
+        }
+        
+        .search-btn {
+            background: var(--karen-green);
+            color: white;
+            border: none;
+            padding: 0 1.5rem;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .search-btn:hover {
+            background: var(--karen-dark);
+        }
+        
+        /* စာကြည့်တိုက်အချက်အလက် */
+        .library-info {
+            background: var(--karen-light);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+        
+        footer {
+            background: var(--karen-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .books-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>ကရင်ယဉ်ကျေးမှုဒစ်ဂျစ်တယ်စာကြည့်တိုက်</h1>
+        <p class="subtitle">ကရင်လူမျိုးတို့၏ ရိုးရာယဉ်ကျေးမှု၊ သမိုင်းနှင့် စာပေများကို လေ့လာရန်</p>
+    </header>
+    
+    <div class="container">
+        <!-- ရှာဖွေရန်အတွက် -->
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="စာအုပ်အမည်၊ စာရေးဆရာ ရှာဖွေရန်...">
+                <button class="search-btn">ရှာဖွေမည်</button>
+            </div>
+        </div>
+        
+        <!-- စာအုပ်စဉ်ကဏ္ဍ -->
+        <div class="category-section">
+            <h2 class="category-title">ကရင်ရိုးရာယဉ်ကျေးမှုစာအုပ်စဉ်</h2>
+            <div class="books-grid">
+                <div class="book-card">
+                    <div class="book-cover">စာအုပ်အဖုံး</div>
+                    <div class="book-info">
+                        <div class="book-title">ကရင်ရိုးရာယက်လုပ်နည်း</div>
+                        <div class="book-author">စာရေးသူ - နန်းသီတာ</div>
+                        <div class="book-desc">ကရင်အမျိုးသမီးများ၏ ရိုးရာယက်လုပ်နည်းများကို အသေးစိတ်ဖော်ပြထားသော စာအုပ်</div>
+                        <a href="#" class="read-btn">ဖတ်ရှုရန်</a>
+                    </div>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-cover">စာအုပ်အဖုံး</div>
+                    <div class="book-info">
+                        <div class="book-title">ကရင်ရိုးရာအက</div>
+                        <div class="book-author">စာရေးသူ - စောမြင့်</div>
+                        <div class="book-desc">ကရင်လူမျိုးတို့၏ ရိုးရာအကများနှင့် ယင်းတို့၏ အဓိပ္ပါယ်ဖွင့်ဆိုချက်များ</div>
+                        <a href="#" class="read-btn">ဖတ်ရှုရန်</a>
+                    </div>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-cover">စာအုပ်အဖုံး</div>
+                    <div class="book-info">
+                        <div class="book-title">ကရင်ရိုးရာဓလေ့</div>
+                        <div class="book-author">စာရေးသူ - စောရွှေနိုင်</div>
+                        <div class="book-desc">ကရင်လူမျိုးတို့၏ နေထိုင်မှုပုံစံ၊ ဓလေ့ထုံးတမ်းများနှင့် ယုံကြည်ကိုးကွယ်မှုများ</div>
+                        <a href="#" class="read-btn">ဖတ်ရှုရန်</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ဒုတိယစာအုပ်စဉ် -->
+        <div class="category-section">
+            <h2 class="category-title">ကရင်သမိုင်းနှင့်လူမျိုးစုလေ့လာရေး</h2>
+            <div class="books-grid">
+                <div class="book-card">
+                    <div class="book-cover">စာအုပ်အဖုံး</div>
+                    <div class="book-info">
+                        <div class="book-title">ကရင်လူမျိုးတို့၏သမိုင်း</div>
+                        <div class="book-author">စာရေးသူ - ဒေါက်တာစောမြင့်</div>
+                        <div class="book-desc">ကရင်လူမျိုးတို့၏ ရှေးအစဉ်အဆက်မှ ယနေ့ခေတ်အထိ သမိုင်းကြောင်း</div>
+                        <a href="#" class="read-btn">ဖတ်ရှုရန်</a>
+                    </div>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-cover">စာအုပ်အဖုံး</div>
+                    <div class="book-info">
+                        <div class="book-title">ကရင်ဘာသာစကား</div>
+                        <div class="book-author">စာရေးသူ - ပါမောက္ခစောရွှေမင်း</div>
+                        <div class="book-desc">ကရင်ဘာသာစကား၏ ဖွံ့ဖြိုးတိုးတက်မှုနှင့် ယနေ့ခေတ်အသုံးပြုမှုပုံစံများ</div>
+                        <a href="#" class="read-btn">ဖတ်ရှုရန်</a>
+                    </div>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-cover">စာအုပ်အဖုံး</div>
+                    <div class="book-info">
+                        <div class="book-title">ကရင်လူမျိုးစုများ</div>
+                        <div class="book-author">စာရေးသူ - စောမြင့်သိန်း</div>
+                        <div class="book-desc">ကရင်လူမျိုးစုခွဲများနှင့် ယင်းတို့၏ ထူးခြားသောယဉ်ကျေးမှုများ</div>
+                        <a href="#" class="read-btn">ဖတ်ရှုရန်</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- စာကြည့်တိုက်အချက်အလက် -->
+        <div class="library-info">
+            <h2>စာကြည့်တိုက်အကြောင်း</h2>
+            <p>ကရင်ယဉ်ကျေးမှုဒစ်ဂျစ်တယ်စာကြည့်တိုက်သည် ကရင်လူမျိုးတို့၏ ယဉ်ကျေးမှု၊ သမိုင်းနှင့် စာပေများကို ထိန်းသိမ်းပြသရန်နှင့် လူငယ်များအား သင်ကြားပေးရန် ရည်ရွယ်ပါသည်။</p>
+            <p>ဤစာကြည့်တိုက်တွင် ကရင်ရိုးရာယဉ်ကျေးမှုဆိုင်ရာ စာအုပ်စာတမ်းများ၊ ဓာတ်ပုံများ၊ ဗီဒီယိုများနှင့် အသံဖိုင်များကို လေ့လာနိုင်ပါသည်။</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>ကရင်ယဉ်ကျေးမှုဒစ်ဂျစ်တယ်စာကြည့်တိုက်</p>
+        <p>ဆက်သွယ်ရန်: info@karenlibrary.edu.mm | ဖုန်း: ၀၉-၁၂၃၄၅၆၇၈၉</p>
+        <p>&copy; ၂၀၂၃ ကရင်ယဉ်ကျေးမှုအဖွဲ့. မူပိုင်ခွင့်အားလုံးရှိပါသည်။</p>
+    </footer>
+</body>
+</html>
 
