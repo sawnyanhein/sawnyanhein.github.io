@@ -516,7 +516,51 @@
 
 
     </section>
+<section class="youtube-video-section">
+  <div class="container">
+    <h2>Watch My Video</h2>
+    <p>Check out this awesome content! �</p>
+    
+    <!-- YouTube Embed -->
+    <div class="video-container">
+      <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/uBVDQ_ZkgB4" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
 
+<!-- Optional CSS Styling -->
+<style>
+  .youtube-video-section {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    margin: 2rem 0;
+  }
+  
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 1.5rem auto;
+  }
+  
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
     <!-- Projects Section -->
     <section class="section" id="projects">
         <div class="container">
