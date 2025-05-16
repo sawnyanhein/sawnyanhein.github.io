@@ -1006,6 +1006,213 @@
     });
   });
 </script>
+
+                        <section class="karen-language-project sgaw-karen">
+  <div class="language-header">
+    <div class="language-badge">Cultural Heritage</div>
+    <h1 class="language-title">Learn <span>S'gaw Karen</span> Language</h1>
+    <p class="language-subtitle">Preserve and celebrate the rich S'gaw Karen linguistic tradition</p>
+  </div>
+  
+  <div class="language-content">
+    <div class="language-card">
+      <div class="card-icon">🗣️</div>
+      <h3>Daily Conversations</h3>
+      <p>Master essential S'gaw Karen phrases for everyday use</p>
+      <button class="card-button" data-lesson="conversation">Start Speaking</button>
+    </div>
+    
+    <div class="language-card">
+      <div class="card-icon">✍️</div>
+      <h3>Writing System</h3>
+      <p>Learn the unique S'gaw Karen alphabet and script</p>
+      <button class="card-button" data-lesson="writing">Practice Now</button>
+    </div>
+    
+    <div class="language-card">
+      <div class="card-icon">🥻</div>
+      <h3>Cultural Wisdom</h3>
+      <p>Discover proverbs and traditional knowledge</p>
+      <button class="card-button" data-lesson="proverbs">Explore</button>
+    </div>
+  </div>
+  
+  <div class="language-features">
+    <div class="feature-box">
+      <h4>Lesson Completion</h4>
+      <div class="feature-progress">
+        <div class="progress-bar" style="width: 65%"></div>
+      </div>
+      <p class="feature-text">65% of learners complete our S'gaw Karen course</p>
+    </div>
+    
+    <div class="feature-box">
+      <h4>Traditional Songs</h4>
+      <div class="audio-controls">
+        <button class="audio-btn play-btn">▶️ Play Song</button>
+      </div>
+      <p class="feature-text">Learn through authentic Karen melodies</p>
+    </div>
+  </div>
+  
+  <div class="cultural-spotlight">
+    <h4>Word of the Day</h4>
+    <div class="karen-word">ကညီ 
+      <span class="pronunciation">[ka̰ ɲi]</span>
+    </div>
+    <p class="word-meaning">"Thank you" - An essential S'gaw Karen expression</p>
+  </div>
+  
+  <div class="language-footer">
+    <button class="enroll-btn">Join Cultural Program</button>
+    <div class="social-share">
+      <span>Share this knowledge:</span>
+      <button class="share-btn fb">f</button>
+      <button class="share-btn tw">t</button>
+      <button class="share-btn wa">w</button>
+    </div>
+  </div>
+</section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Padauk:wght@400;700&display=swap');
+  
+  :root {
+    --white: #ffffff;
+    --blue: #1e56a0; /* Deeper blue for cultural significance */
+    --light-blue: #3a7fcf;
+    --red: #d62828; /* Vibrant red */
+    --light-red: #f77f00; /* Orange-red accent */
+    --dark: #003049; /* Dark blue-black */
+    --gold: #fcbf49; /* Traditional Karen gold accent */
+  }
+  
+  .sgaw-karen {
+    font-family: 'Noto Sans', 'Padauk', sans-serif;
+    border: 2px solid var(--gold);
+  }
+  
+  .sgaw-karen .language-title {
+    font-family: 'Padauk', 'Noto Sans', sans-serif;
+  }
+  
+  .sgaw-karen .language-badge {
+    background: linear-gradient(135deg, var(--blue), var(--red));
+  }
+  
+  .sgaw-karen .language-title span {
+    color: var(--red);
+  }
+  
+  .sgaw-karen .language-title span::after {
+    background: var(--blue);
+  }
+  
+  .sgaw-karen .card-button {
+    background: linear-gradient(135deg, var(--blue), var(--red));
+  }
+  
+  .sgaw-karen .card-button:hover {
+    background: linear-gradient(135deg, var(--light-blue), var(--light-red));
+  }
+  
+  .sgaw-karen .cultural-spotlight {
+    background-color: rgba(30, 86, 160, 0.08);
+    border-left: 4px solid var(--gold);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 0 8px 8px 0;
+  }
+  
+  .sgaw-karen .karen-word {
+    font-family: 'Padauk', serif;
+    font-size: 2.5rem;
+    color: var(--dark);
+    margin: 0.5rem 0;
+    line-height: 1.2;
+  }
+  
+  .sgaw-karen .pronunciation {
+    font-size: 1rem;
+    color: var(--red);
+    vertical-align: super;
+  }
+  
+  .sgaw-karen .word-meaning {
+    color: var(--dark);
+    font-style: italic;
+    border-top: 1px dashed var(--gold);
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .sgaw-karen .enroll-btn {
+    background: linear-gradient(135deg, var(--red), var(--gold));
+  }
+  
+  .sgaw-karen .share-btn.wa {
+    background-color: #25D366; /* WhatsApp green */
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // S'gaw Karen specific interactions
+    const karenWord = document.querySelector('.sgaw-karen .karen-word');
+    
+    // Animate the Karen word
+    karenWord.addEventListener('click', function() {
+      this.style.transform = 'scale(1.05)';
+      this.style.color = 'var(--red)';
+      setTimeout(() => {
+        this.style.transform = '';
+        this.style.color = '';
+      }, 500);
+      
+      // In a real implementation, you would play audio here
+      alert('Playing pronunciation: ' + this.querySelector('.pronunciation').textContent);
+    });
+    
+    // Cultural song player
+    const playBtn = document.querySelector('.sgaw-karen .play-btn');
+    let isPlaying = false;
+    
+    playBtn.addEventListener('click', function() {
+      isPlaying = !isPlaying;
+      if (isPlaying) {
+        this.textContent = '⏸️ Pause Song';
+        this.style.backgroundColor = 'var(--red)';
+        // In real implementation, audio would play here
+      } else {
+        this.textContent = '▶️ Play Song';
+        this.style.backgroundColor = '';
+      }
+    });
+    
+    // Word of the day rotation (simplified)
+    const words = [
+      {word: 'ကညီ', pronunciation: '[ka̰ ɲi]', meaning: '"Thank you"'},
+      {word: 'မူၢ်', pronunciation: '[mù]', meaning: '"Mother"'},
+      {word: 'ပှၤ', pronunciation: '[pʰa̰]', meaning: '"Father"'},
+      {word: 'ထီၣ်', pronunciation: '[tʰì]', meaning: '"Water"'},
+      {word: 'နၢ်', pronunciation: '[nɛ̀]', meaning: '"Sun"'}
+    ];
+    
+    let currentWord = 0;
+    
+    // Rotate word every 5 seconds (for demo)
+    setInterval(() => {
+      currentWord = (currentWord + 1) % words.length;
+      document.querySelector('.karen-word').innerHTML = 
+        words[currentWord].word + 
+        ' <span class="pronunciation">' + 
+        words[currentWord].pronunciation + 
+        '</span>';
+      document.querySelector('.word-meaning').textContent = 
+        words[currentWord].meaning;
+    }, 5000);
+  });
+</script>
                         
               <section class="blog-post-section">
   <article class="blog-card">
