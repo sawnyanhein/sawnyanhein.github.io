@@ -1696,427 +1696,7 @@
   }
 </style>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const blogCard = document.querySelector('.blog-card');
-    const readMoreBtn = document.querySelector('.read-more-btn');
-    const likes = document.querySelector('.likes');
-    const comments = document.querySelector('.comments');
-    
-    // Pulse animation on hover
-    blogCard.addEventListener('mousemove', (e) => {
-      const x = e.pageX - blogCard.offsetLeft;
-      const y = e.pageY - blogCard.offsetTop;
-      
-      blogCard.style.setProperty('--x', `${x}px`);
-      blogCard.style.setProperty('--y', `${y}px`);
-    });
-    
-    // Read More button effect
-    readMoreBtn.addEventListener('click', () => {
-      blogCard.classList.add('clicked');
-      setTimeout(() => {
-        alert('Loading full article...');
-        // You can replace this with actual content loading
-      }, 500);
-    });
-    
-    // Like interaction
-    let likeCount = 124;
-    likes.addEventListener('click', () => {
-      likeCount++;
-      likes.innerHTML = `❤️ ${likeCount} Likes`;
-      likes.style.color = '#FF6584';
-      setTimeout(() => {
-        likes.style.color = '';
-      }, 1000);
-    });
-    
-    // Comment interaction
-    comments.addEventListener('click', () => {
-      const commentCount = parseInt(comments.textContent.match(/\d+/)[0]);
-      comments.innerHTML = `💬 ${commentCount + 1} Comments`;
-      comments.style.color = '#6C63FF';
-      setTimeout(() => {
-        comments.style.color = '';
-      }, 1000);
-    });
-  });
-</script>     
 
-   <div class="robot-container">
-  <div class="robot">
-    <!-- ခေါင်း -->
-    <div class="robot-head">
-      <div class="robot-eye left-eye"></div>
-      <div class="robot-eye right-eye"></div>
-      <div class="robot-mouth"></div>
-      <div class="robot-antenna"></div>
-    </div>
-    
-    <!-- ကိုယ် -->
-    <div class="robot-body">
-      <div class="robot-panel">
-        <div class="panel-light red"></div>
-        <div class="panel-light yellow"></div>
-        <div class="panel-light green"></div>
-      </div>
-    </div>
-    
-    <!-- လက်များ -->
-    <div class="robot-arm left-arm"></div>
-    <div class="robot-arm right-arm"></div>
-    
-    <!-- ခြေထောက်များ -->
-    <div class="robot-leg left-leg"></div>
-    <div class="robot-leg right-leg"></div>
-  </div>
-  
-  <div class="shadow"></div>
-</div>
-
-<style>
-/* Base Styles */
-.robot-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-}
-
-/* Robot Main Structure */
-.robot {
-  position: relative;
-  width: 200px;
-  height: 350px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 10;
-  animation: float 3s ease-in-out infinite;
-}
-
-/* Robot Head */
-.robot-head {
-  width: 120px;
-  height: 100px;
-  background: #4a4e69;
-  border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  box-shadow: inset -5px -5px 15px rgba(0,0,0,0.3);
-}
-
-/* Robot Eyes */
-.robot-eye {
-  width: 25px;
-  height: 30px;
-  background: #f8f9fa;
-  border-radius: 50%;
-  position: absolute;
-  top: 30px;
-  border: 3px solid #22223b;
-  animation: blink 4s infinite;
-}
-
-.left-eye {
-  left: 25px;
-}
-
-.right-eye {
-  right: 25px;
-}
-
-/* Robot Mouth */
-.robot-mouth {
-  width: 40px;
-  height: 10px;
-  background: #22223b;
-  border-radius: 0 0 20px 20px;
-  position: absolute;
-  bottom: 20px;
-  animation: talk 2s infinite;
-}
-
-/* Robot Antenna */
-.robot-antenna {
-  width: 5px;
-  height: 30px;
-  background: #4a4e69;
-  position: absolute;
-  top: -30px;
-  border-radius: 5px 5px 0 0;
-}
-
-.robot-antenna::after {
-  content: '';
-  width: 15px;
-  height: 15px;
-  background: #ff9e00;
-  border-radius: 50%;
-  position: absolute;
-  top: -15px;
-  left: -5px;
-  animation: pulse 2s infinite;
-}
-
-/* Robot Body */
-.robot-body {
-  width: 150px;
-  height: 180px;
-  background: #4a4e69;
-  border-radius: 20px;
-  margin-top: -10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: inset -8px -8px 15px rgba(0,0,0,0.3);
-}
-
-/* Control Panel */
-.robot-panel {
-  width: 100px;
-  height: 40px;
-  background: #22223b;
-  border-radius: 10px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0 15px;
-}
-
-.panel-light {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  opacity: 0.7;
-}
-
-.panel-light.red {
-  background: #ff6b6b;
-  animation: light-red 3s infinite;
-}
-
-.panel-light.yellow {
-  background: #ffd166;
-  animation: light-yellow 3s infinite 1s;
-}
-
-.panel-light.green {
-  background: #06d6a0;
-  animation: light-green 3s infinite 2s;
-}
-
-/* Robot Arms */
-.robot-arm {
-  width: 30px;
-  height: 120px;
-  background: #4a4e69;
-  position: absolute;
-  top: 100px;
-  border-radius: 15px;
-  box-shadow: inset -5px -5px 10px rgba(0,0,0,0.3);
-}
-
-.left-arm {
-  left: -30px;
-  transform-origin: top center;
-  animation: arm-swing-left 4s infinite;
-}
-
-.right-arm {
-  right: -30px;
-  transform-origin: top center;
-  animation: arm-swing-right 4s infinite 2s;
-}
-
-/* Robot Legs */
-.robot-leg {
-  width: 35px;
-  height: 80px;
-  background: #22223b;
-  position: absolute;
-  bottom: -80px;
-  border-radius: 0 0 15px 15px;
-  box-shadow: inset -5px -5px 10px rgba(0,0,0,0.3);
-}
-
-.left-leg {
-  left: 35px;
-  animation: leg-move-left 4s infinite;
-}
-
-.right-leg {
-  right: 35px;
-  animation: leg-move-right 4s infinite 2s;
-}
-
-/* Shadow */
-.shadow {
-  width: 150px;
-  height: 20px;
-  background: rgba(0,0,0,0.2);
-  border-radius: 50%;
-  margin-top: 50px;
-  filter: blur(5px);
-  animation: shadow-pulse 3s ease-in-out infinite;
-}
-
-/* Animations */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
-
-@keyframes blink {
-  0%, 48%, 52%, 100% { height: 30px; }
-  50% { height: 5px; }
-}
-
-@keyframes talk {
-  0%, 40%, 60%, 100% { height: 10px; }
-  50% { height: 15px; }
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.2); opacity: 0.8; }
-}
-
-@keyframes light-red {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 1; box-shadow: 0 0 10px #ff6b6b; }
-}
-
-@keyframes light-yellow {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 1; box-shadow: 0 0 10px #ffd166; }
-}
-
-@keyframes light-green {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 1; box-shadow: 0 0 10px #06d6a0; }
-}
-
-@keyframes arm-swing-left {
-  0%, 100% { transform: rotate(-20deg); }
-  50% { transform: rotate(30deg); }
-}
-
-@keyframes arm-swing-right {
-  0%, 100% { transform: rotate(20deg); }
-  50% { transform: rotate(-30deg); }
-}
-
-@keyframes leg-move-left {
-  0%, 100% { transform: rotate(-5deg); }
-  50% { transform: rotate(5deg); }
-}
-
-@keyframes leg-move-right {
-  0%, 100% { transform: rotate(5deg); }
-  50% { transform: rotate(-5deg); }
-}
-
-@keyframes shadow-pulse {
-  0%, 100% { transform: scale(1); opacity: 0.5; }
-  50% { transform: scale(0.8); opacity: 0.3; }
-}
-</style>       
-                    <p>
-
-<section class="youtube-section">
-  <div class="youtube-container">
-    <h2 class="section-title">🎥 My Awesome Video</h2>
-    <p class="section-description">Enjoy this cool content with smooth animations!</p>
-    
-    <div class="video-wrapper">
-      <iframe 
-        src="https://www.youtube.com/embed/uBVDQ_ZkgB4" 
-        title="YouTube Video" 
-        frameborder="0" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</section>
-
-<style>
-  .youtube-section {
-    padding: 3rem 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 60vh;
-    background: linear-gradient(135deg, #6e8efb, #a777e3);
-    font-family: 'Poppins', sans-serif;
-  }
-
-  .youtube-container {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 2rem;
-    width: 90%;
-    max-width: 900px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    text-align: center;
-    transition: transform 0.3s ease;
-  }
-
-  .youtube-container:hover {
-    transform: translateY(-5px);
-  }
-
-  .section-title {
-    font-size: 2.5rem;
-    color: white;
-    margin-bottom: 0.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  }
-
-  .section-description {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 2rem;
-  }
-
-  .video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-  }
-
-  .video-wrapper:hover {
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
-  }
-
-  .video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-
-  /* Add animation for extra coolness */
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .youtube-container {
-    animation: fadeIn 0.8s ease-out;
-  }
-</style>
 
                       
     <!-- Footer -->
@@ -2136,7 +1716,554 @@
 </html>
 
    
-     
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polyglot Master</title>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4895ef;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4cc9f0;
+            --warning: #f72585;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--warning);
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .language-selector {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .language-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            flex: 1;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .language-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .language-card.active {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, #4361ee20 0%, #4895ef20 100%);
+        }
+
+        .language-flag {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-container {
+            margin: 2rem 0;
+        }
+
+        .progress-bar {
+            height: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            width: 65%;
+            border-radius: 5px;
+            transition: width 0.5s ease;
+        }
+
+        .learning-modules {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .module-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .module-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+        }
+
+        .module-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .module-desc {
+            color: #6c757d;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .module-progress {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .module-progress-bar {
+            flex-grow: 1;
+            height: 5px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-right: 1rem;
+        }
+
+        .module-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            width: 40%;
+            border-radius: 5px;
+        }
+
+        .practice-section {
+            margin-top: 3rem;
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .practice-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .practice-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .practice-nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .practice-nav-btn {
+            background: var(--light);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .practice-nav-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .practice-card {
+            background: linear-gradient(135deg, #4361ee10 0%, #4895ef10 100%);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .word-display {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .translation {
+            font-size: 1.2rem;
+            color: #6c757d;
+            margin-bottom: 2rem;
+        }
+
+        .answer-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .answer-btn {
+            padding: 1rem;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 1rem;
+        }
+
+        .answer-btn:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .answer-btn.correct {
+            background: #4cc9f020;
+            border-color: var(--success);
+            color: var(--success);
+        }
+
+        .answer-btn.incorrect {
+            background: #f7258520;
+            border-color: var(--warning);
+            color: var(--warning);
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .action-btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .primary-btn {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: white;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4);
+        }
+
+        .secondary-btn {
+            background: white;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .secondary-btn:hover {
+            background: #4361ee10;
+        }
+
+        .features-section {
+            margin-top: 4rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--dark);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .feature-desc {
+            color: #6c757d;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .language-selector {
+                flex-direction: column;
+            }
+            
+            .answer-options {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">Polyglot<span>Master</span></div>
+            <div class="user-profile">
+                <div class="avatar">JD</div>
+                <span>John Doe</span>
+            </div>
+        </header>
+
+        <div class="language-selector">
+            <div class="language-card active">
+                <div class="language-flag">🇪🇸</div>
+                <h3>Spanish</h3>
+                <p>Intermediate</p>
+            </div>
+            <div class="language-card">
+                <div class="language-flag">🇫🇷</div>
+                <h3>French</h3>
+                <p>Beginner</p>
+            </div>
+            <div class="language-card">
+                <div class="language-flag">🇯🇵</div>
+                <h3>Japanese</h3>
+                <p>New</p>
+            </div>
+            <div class="language-card">
+                <div class="language-flag">🇲🇲</div>
+                <h3>Burmese</h3>
+                <p>Advanced</p>
+            </div>
+        </div>
+
+        <div class="progress-container">
+            <h3>Your Spanish Progress</h3>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <p>65% complete - 12 day streak!</p>
+        </div>
+
+        <h2 class="section-title">Learning Modules</h2>
+        <div class="learning-modules">
+            <div class="module-card">
+                <h3 class="module-title">Basic Phrases</h3>
+                <p class="module-desc">Learn essential greetings and expressions</p>
+                <div class="module-progress">
+                    <div class="module-progress-bar">
+                        <div class="module-progress-fill" style="width: 80%;"></div>
+                    </div>
+                    <span>80%</span>
+                </div>
+            </div>
+            <div class="module-card">
+                <h3 class="module-title">Food & Dining</h3>
+                <p class="module-desc">Order food and understand menus</p>
+                <div class="module-progress">
+                    <div class="module-progress-bar">
+                        <div class="module-progress-fill" style="width: 45%;"></div>
+                    </div>
+                    <span>45%</span>
+                </div>
+            </div>
+            <div class="module-card">
+                <h3 class="module-title">Travel Phrases</h3>
+                <p class="module-desc">Navigate transportation and ask for directions</p>
+                <div class="module-progress">
+                    <div class="module-progress-bar">
+                        <div class="module-progress-fill" style="width: 30%;"></div>
+                    </div>
+                    <span>30%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="practice-section">
+            <div class="practice-header">
+                <h3 class="practice-title">Today's Practice</h3>
+                <div class="practice-nav">
+                    <button class="practice-nav-btn">Vocabulary</button>
+                    <button class="practice-nav-btn">Grammar</button>
+                    <button class="practice-nav-btn">Listening</button>
+                </div>
+            </div>
+            
+            <div class="practice-card">
+                <div class="word-display">Hola</div>
+                <div class="translation">Hello</div>
+                
+                <div class="answer-options">
+                    <button class="answer-btn">Goodbye</button>
+                    <button class="answer-btn correct">Hello</button>
+                    <button class="answer-btn">Thank you</button>
+                    <button class="answer-btn">Please</button>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="action-btn secondary-btn">Skip</button>
+                    <button class="action-btn primary-btn">Check Answer</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-section">
+            <h2 class="section-title">Why PolyglotMaster is Better</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🗣️</div>
+                    <h3 class="feature-title">Real Conversations</h3>
+                    <p class="feature-desc">Practice with AI-powered conversations that adapt to your level and interests, making learning more natural than rigid exercises.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3 class="feature-title">Cultural Context</h3>
+                    <p class="feature-desc">Learn not just the language but the cultural nuances, idioms, and real-world usage that make communication authentic.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3 class="feature-title">Neuroscience-Based</h3>
+                    <p class="feature-desc">Our system uses spaced repetition and memory techniques optimized for how your brain learns best.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">AI Tutor</h3>
+                    <p class="feature-desc">Get instant feedback and explanations from your personal AI tutor available 24/7.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎮</div>
+                    <h3 class="feature-title">Gamified Learning</h3>
+                    <p class="feature-desc">Earn rewards, complete challenges, and compete with friends in our engaging learning games.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👂</div>
+                    <h3 class="feature-title">Speech Recognition</h3>
+                    <p class="feature-desc">Advanced pronunciation analysis helps you sound like a native speaker.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple interactive elements
+        document.querySelectorAll('.language-card').forEach(card => {
+            card.addEventListener('click', () => {
+                document.querySelectorAll('.language-card').forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+            });
+        });
+
+        document.querySelectorAll('.answer-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.answer-btn').forEach(b => b.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        document.querySelector('.primary-btn').addEventListener('click', function() {
+            const selected = document.querySelector('.answer-btn.selected');
+            if (selected) {
+                selected.classList.add(selected.textContent === 'Hello' ? 'correct' : 'incorrect');
+            }
+        });
+    </script>
+</body>
+</html>  
     
         
    
