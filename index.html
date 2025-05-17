@@ -456,7 +456,349 @@
             
             .nav-links {
                 display: none;
-            }
+       /* Vibrant Color Palette */
+:root {
+  --vibrant-pink: #FF3E9D;
+  --electric-blue: #00B4FF;
+  --sunshine-yellow: #FFD700;
+  --lime-green: #00FF7F;
+  --purple-power: #9C27B0;
+  --orange-crush: #FF7F50;
+  --white: #FFFFFF;
+  --dark-gray: #333333;
+}
+
+/* Base Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: var(--dark-gray);
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Header with Rainbow Gradient */
+.header {
+  background: linear-gradient(90deg, 
+    var(--vibrant-pink) 0%, 
+    var(--orange-crush) 20%, 
+    var(--sunshine-yellow) 40%, 
+    var(--lime-green) 60%, 
+    var(--electric-blue) 80%, 
+    var(--purple-power) 100%);
+  padding: 3rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: repeating-linear-gradient(90deg, 
+    var(--vibrant-pink), 
+    var(--vibrant-pink) 20px, 
+    var(--electric-blue) 20px, 
+    var(--electric-blue) 40px,
+    var(--sunshine-yellow) 40px,
+    var(--sunshine-yellow) 60px,
+    var(--lime-green) 60px,
+    var(--lime-green) 80px,
+    var(--purple-power) 80px,
+    var(--purple-power) 100px);
+}
+
+.header-title {
+  color: var(--white);
+  font-size: 3.5rem;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-weight: 800;
+  letter-spacing: 1px;
+  animation: rainbowText 8s infinite alternate;
+}
+
+.header-subtitle {
+  color: var(--white);
+  font-weight: 300;
+  font-size: 1.5rem;
+  opacity: 0.9;
+  margin-top: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Rainbow Navigation */
+.navbar {
+  background-color: var(--white);
+  padding: 1rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  color: var(--dark-gray);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  transition: all 0.4s ease;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    var(--vibrant-pink) 0%, 
+    var(--electric-blue) 50%, 
+    var(--sunshine-yellow) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.nav-link:hover {
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nav-link:hover::before {
+  opacity: 1;
+}
+
+.nav-link.active {
+  background: linear-gradient(90deg, 
+    var(--vibrant-pink) 0%, 
+    var(--electric-blue) 100%);
+  color: var(--white);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Colorful Cards */
+.card {
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin: 2rem auto;
+  max-width: 800px;
+  position: relative;
+  border: none;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  padding: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    var(--vibrant-pink) 0%, 
+    var(--electric-blue) 50%, 
+    var(--sunshine-yellow) 100%);
+}
+
+.card-body {
+  padding: 2.5rem;
+  background-color: var(--white);
+}
+
+/* Rainbow Gradient Border Effect */
+.rainbow-border {
+  position: relative;
+  padding: 3px;
+  border-radius: 16px;
+  background: linear-gradient(90deg, 
+    var(--vibrant-pink) 0%, 
+    var(--orange-crush) 20%, 
+    var(--sunshine-yellow) 40%, 
+    var(--lime-green) 60%, 
+    var(--electric-blue) 80%, 
+    var(--purple-power) 100%);
+}
+
+.rainbow-border > div {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 2rem;
+}
+
+/* Vibrant Buttons */
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  margin: 0.5rem;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: var(--white);
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: 0.6s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, var(--vibrant-pink), var(--purple-power));
+}
+
+.btn-primary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(156, 39, 176, 0.3);
+}
+
+.btn-secondary {
+  background: linear-gradient(45deg, var(--electric-blue), var(--lime-green));
+}
+
+.btn-secondary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 180, 255, 0.3);
+}
+
+.btn-accent {
+  background: linear-gradient(45deg, var(--sunshine-yellow), var(--orange-crush));
+}
+
+.btn-accent:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(255, 215, 0, 0.3);
+}
+
+/* Colorful Badges */
+.badge {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin: 0.2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.badge-pink {
+  background-color: var(--vibrant-pink);
+  color: var(--white);
+}
+
+.badge-blue {
+  background-color: var(--electric-blue);
+  color: var(--white);
+}
+
+.badge-yellow {
+  background-color: var(--sunshine-yellow);
+  color: var(--dark-gray);
+}
+
+.badge-green {
+  background-color: var(--lime-green);
+  color: var(--dark-gray);
+}
+
+.badge-purple {
+  background-color: var(--purple-power);
+  color: var(--white);
+}
+
+/* Animations */
+@keyframes rainbowText {
+  0% { color: var(--vibrant-pink); }
+  20% { color: var(--orange-crush); }
+  40% { color: var(--sunshine-yellow); }
+  60% { color: var(--lime-green); }
+  80% { color: var(--electric-blue); }
+  100% { color: var(--purple-power); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-title {
+    font-size: 2.5rem;
+  }
+  
+  .header-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .card {
+    margin: 1rem;
+  }
+}     }
         }
     </style>
 </head>
@@ -1752,7 +2094,7 @@
     
     <div class="video-wrapper">
       <iframe 
-        src="https://www.youtube.com/embed/uBVDQ_ZkgB4" 
+        src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
         title="YouTube Video" 
         frameborder="0" 
         allowfullscreen>
@@ -1761,350 +2103,81 @@
   </div>
 </section>
 
-
-                        /* Vibrant Color Palette */
-:root {
-  --vibrant-pink: #FF3E9D;
-  --electric-blue: #00B4FF;
-  --sunshine-yellow: #FFD700;
-  --lime-green: #00FF7F;
-  --purple-power: #9C27B0;
-  --orange-crush: #FF7F50;
-  --white: #FFFFFF;
-  --dark-gray: #333333;
-}
-
-/* Base Styles */
-body {
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.6;
-  color: var(--dark-gray);
-  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-}
-
-/* Header with Rainbow Gradient */
-.header {
-  background: linear-gradient(90deg, 
-    var(--vibrant-pink) 0%, 
-    var(--orange-crush) 20%, 
-    var(--sunshine-yellow) 40%, 
-    var(--lime-green) 60%, 
-    var(--electric-blue) 80%, 
-    var(--purple-power) 100%);
-  padding: 3rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.header::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 8px;
-  background: repeating-linear-gradient(90deg, 
-    var(--vibrant-pink), 
-    var(--vibrant-pink) 20px, 
-    var(--electric-blue) 20px, 
-    var(--electric-blue) 40px,
-    var(--sunshine-yellow) 40px,
-    var(--sunshine-yellow) 60px,
-    var(--lime-green) 60px,
-    var(--lime-green) 80px,
-    var(--purple-power) 80px,
-    var(--purple-power) 100px);
-}
-
-.header-title {
-  color: var(--white);
-  font-size: 3.5rem;
-  margin: 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  font-weight: 800;
-  letter-spacing: 1px;
-  animation: rainbowText 8s infinite alternate;
-}
-
-.header-subtitle {
-  color: var(--white);
-  font-weight: 300;
-  font-size: 1.5rem;
-  opacity: 0.9;
-  margin-top: 1rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-/* Rainbow Navigation */
-.navbar {
-  background-color: var(--white);
-  padding: 1rem 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.nav-list {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.nav-item {
-  position: relative;
-}
-
-.nav-link {
-  color: var(--dark-gray);
-  text-decoration: none;
-  font-weight: 600;
-  padding: 0.8rem 1.8rem;
-  border-radius: 50px;
-  transition: all 0.4s ease;
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-}
-
-.nav-link::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, 
-    var(--vibrant-pink) 0%, 
-    var(--electric-blue) 50%, 
-    var(--sunshine-yellow) 100%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
-}
-
-.nav-link:hover {
-  color: var(--white);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.nav-link:hover::before {
-  opacity: 1;
-}
-
-.nav-link.active {
-  background: linear-gradient(90deg, 
-    var(--vibrant-pink) 0%, 
-    var(--electric-blue) 100%);
-  color: var(--white);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Colorful Cards */
-.card {
-  background: var(--white);
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  margin: 2rem auto;
-  max-width: 800px;
-  position: relative;
-  border: none;
-}
-
-.card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
-}
-
-.card-header {
-  padding: 1.5rem;
-  font-size: 1.8rem;
-  font-weight: 700;
-  text-align: center;
-  color: var(--white);
-  position: relative;
-  overflow: hidden;
-}
-
-.card-header::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, 
-    var(--vibrant-pink) 0%, 
-    var(--electric-blue) 50%, 
-    var(--sunshine-yellow) 100%);
-}
-
-.card-body {
-  padding: 2.5rem;
-  background-color: var(--white);
-}
-
-/* Rainbow Gradient Border Effect */
-.rainbow-border {
-  position: relative;
-  padding: 3px;
-  border-radius: 16px;
-  background: linear-gradient(90deg, 
-    var(--vibrant-pink) 0%, 
-    var(--orange-crush) 20%, 
-    var(--sunshine-yellow) 40%, 
-    var(--lime-green) 60%, 
-    var(--electric-blue) 80%, 
-    var(--purple-power) 100%);
-}
-
-.rainbow-border > div {
-  background: var(--white);
-  border-radius: 14px;
-  padding: 2rem;
-}
-
-/* Vibrant Buttons */
-.btn {
-  display: inline-block;
-  padding: 1rem 2.5rem;
-  border: none;
-  border-radius: 50px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  position: relative;
-  overflow: hidden;
-  margin: 0.5rem;
-  font-size: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  color: var(--white);
-}
-
-.btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-  transition: 0.6s;
-}
-
-.btn:hover::before {
-  left: 100%;
-}
-
-.btn-primary {
-  background: linear-gradient(45deg, var(--vibrant-pink), var(--purple-power));
-}
-
-.btn-primary:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(156, 39, 176, 0.3);
-}
-
-.btn-secondary {
-  background: linear-gradient(45deg, var(--electric-blue), var(--lime-green));
-}
-
-.btn-secondary:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 180, 255, 0.3);
-}
-
-.btn-accent {
-  background: linear-gradient(45deg, var(--sunshine-yellow), var(--orange-crush));
-}
-
-.btn-accent:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(255, 215, 0, 0.3);
-}
-
-/* Colorful Badges */
-.badge {
-  display: inline-block;
-  padding: 0.5rem 1.2rem;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  margin: 0.2rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.badge-pink {
-  background-color: var(--vibrant-pink);
-  color: var(--white);
-}
-
-.badge-blue {
-  background-color: var(--electric-blue);
-  color: var(--white);
-}
-
-.badge-yellow {
-  background-color: var(--sunshine-yellow);
-  color: var(--dark-gray);
-}
-
-.badge-green {
-  background-color: var(--lime-green);
-  color: var(--dark-gray);
-}
-
-.badge-purple {
-  background-color: var(--purple-power);
-  color: var(--white);
-}
-
-/* Animations */
-@keyframes rainbowText {
-  0% { color: var(--vibrant-pink); }
-  20% { color: var(--orange-crush); }
-  40% { color: var(--sunshine-yellow); }
-  60% { color: var(--lime-green); }
-  80% { color: var(--electric-blue); }
-  100% { color: var(--purple-power); }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .header-title {
-    font-size: 2.5rem;
-  }
-  
-  .header-subtitle {
-    font-size: 1.2rem;
-  }
-  
-  .nav-list {
-    flex-direction: column;
+<style>
+  .youtube-section {
+    padding: 3rem 1rem;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+    min-height: 60vh;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    font-family: 'Poppins', sans-serif;
   }
-  
-  .card {
-    margin: 1rem;
+
+  .youtube-container {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 900px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease;
   }
-}
+
+  .youtube-container:hover {
+    transform: translateY(-5px);
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .section-description {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+  }
+
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .video-wrapper:hover {
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+  }
+
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* Add animation for extra coolness */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .youtube-container {
+    animation: fadeIn 0.8s ease-out;
+  }
+</style>
+
+                      
     <!-- Footer -->
     <footer>
         <div class="container">
