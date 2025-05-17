@@ -1744,71 +1744,288 @@
   });
 </script>     
 
-     <div class="keyboard-container">
-  <textarea class="keyboard-display" placeholder="ဤနေရာတွင် စာရိုက်ပါ..."></textarea>
-  
-  <div class="keyboard-row">
-    <button class="keyboard-key">1</button>
-    <button class="keyboard-key">2</button>
-    <button class="keyboard-key">3</button>
-    <button class="keyboard-key">4</button>
-    <button class="keyboard-key">5</button>
-    <button class="keyboard-key">6</button>
-    <button class="keyboard-key">7</button>
-    <button class="keyboard-key">8</button>
-    <button class="keyboard-key">9</button>
-    <button class="keyboard-key">0</button>
+   <div class="robot-container">
+  <div class="robot">
+    <!-- ခေါင်း -->
+    <div class="robot-head">
+      <div class="robot-eye left-eye"></div>
+      <div class="robot-eye right-eye"></div>
+      <div class="robot-mouth"></div>
+      <div class="robot-antenna"></div>
+    </div>
+    
+    <!-- ကိုယ် -->
+    <div class="robot-body">
+      <div class="robot-panel">
+        <div class="panel-light red"></div>
+        <div class="panel-light yellow"></div>
+        <div class="panel-light green"></div>
+      </div>
+    </div>
+    
+    <!-- လက်များ -->
+    <div class="robot-arm left-arm"></div>
+    <div class="robot-arm right-arm"></div>
+    
+    <!-- ခြေထောက်များ -->
+    <div class="robot-leg left-leg"></div>
+    <div class="robot-leg right-leg"></div>
   </div>
   
-  <div class="keyboard-row">
-    <button class="keyboard-key">q</button>
-    <button class="keyboard-key">w</button>
-    <button class="keyboard-key">e</button>
-    <button class="keyboard-key">r</button>
-    <button class="keyboard-key">t</button>
-    <button class="keyboard-key">y</button>
-    <button class="keyboard-key">u</button>
-    <button class="keyboard-key">i</button>
-    <button class="keyboard-key">o</button>
-    <button class="keyboard-key">p</button>
-  </div>
-  
-  <div class="keyboard-row">
-    <button class="keyboard-key">a</button>
-    <button class="keyboard-key">s</button>
-    <button class="keyboard-key">d</button>
-    <button class="keyboard-key">f</button>
-    <button class="keyboard-key">g</button>
-    <button class="keyboard-key">h</button>
-    <button class="keyboard-key">j</button>
-    <button class="keyboard-key">k</button>
-    <button class="keyboard-key">l</button>
-  </div>
-  
-  <div class="keyboard-row">
-    <button class="keyboard-key shift">Shift</button>
-    <button class="keyboard-key">z</button>
-    <button class="keyboard-key">x</button>
-    <button class="keyboard-key">c</button>
-    <button class="keyboard-key">v</button>
-    <button class="keyboard-key">b</button>
-    <button class="keyboard-key">n</button>
-    <button class="keyboard-key">m</button>
-    <button class="keyboard-key special">⌫</button>
-  </div>
-  
-  <div class="keyboard-row">
-    <button class="keyboard-key myanmar">က</button>
-    <button class="keyboard-key myanmar">ခ</button>
-    <button class="keyboard-key myanmar">ဂ</button>
-    <button class="keyboard-key myanmar">ဃ</button>
-    <button class="keyboard-key myanmar">င</button>
-    <button class="keyboard-key space">Space</button>
-    <button class="keyboard-key myanmar">ာ</button>
-    <button class="keyboard-key myanmar">ိ</button>
-    <button class="keyboard-key enter">Enter</button>
-  </div>
-</div>                   
+  <div class="shadow"></div>
+</div>
+
+<style>
+/* Base Styles */
+.robot-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+/* Robot Main Structure */
+.robot {
+  position: relative;
+  width: 200px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Robot Head */
+.robot-head {
+  width: 120px;
+  height: 100px;
+  background: #4a4e69;
+  border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  box-shadow: inset -5px -5px 15px rgba(0,0,0,0.3);
+}
+
+/* Robot Eyes */
+.robot-eye {
+  width: 25px;
+  height: 30px;
+  background: #f8f9fa;
+  border-radius: 50%;
+  position: absolute;
+  top: 30px;
+  border: 3px solid #22223b;
+  animation: blink 4s infinite;
+}
+
+.left-eye {
+  left: 25px;
+}
+
+.right-eye {
+  right: 25px;
+}
+
+/* Robot Mouth */
+.robot-mouth {
+  width: 40px;
+  height: 10px;
+  background: #22223b;
+  border-radius: 0 0 20px 20px;
+  position: absolute;
+  bottom: 20px;
+  animation: talk 2s infinite;
+}
+
+/* Robot Antenna */
+.robot-antenna {
+  width: 5px;
+  height: 30px;
+  background: #4a4e69;
+  position: absolute;
+  top: -30px;
+  border-radius: 5px 5px 0 0;
+}
+
+.robot-antenna::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  background: #ff9e00;
+  border-radius: 50%;
+  position: absolute;
+  top: -15px;
+  left: -5px;
+  animation: pulse 2s infinite;
+}
+
+/* Robot Body */
+.robot-body {
+  width: 150px;
+  height: 180px;
+  background: #4a4e69;
+  border-radius: 20px;
+  margin-top: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset -8px -8px 15px rgba(0,0,0,0.3);
+}
+
+/* Control Panel */
+.robot-panel {
+  width: 100px;
+  height: 40px;
+  background: #22223b;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.panel-light {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+.panel-light.red {
+  background: #ff6b6b;
+  animation: light-red 3s infinite;
+}
+
+.panel-light.yellow {
+  background: #ffd166;
+  animation: light-yellow 3s infinite 1s;
+}
+
+.panel-light.green {
+  background: #06d6a0;
+  animation: light-green 3s infinite 2s;
+}
+
+/* Robot Arms */
+.robot-arm {
+  width: 30px;
+  height: 120px;
+  background: #4a4e69;
+  position: absolute;
+  top: 100px;
+  border-radius: 15px;
+  box-shadow: inset -5px -5px 10px rgba(0,0,0,0.3);
+}
+
+.left-arm {
+  left: -30px;
+  transform-origin: top center;
+  animation: arm-swing-left 4s infinite;
+}
+
+.right-arm {
+  right: -30px;
+  transform-origin: top center;
+  animation: arm-swing-right 4s infinite 2s;
+}
+
+/* Robot Legs */
+.robot-leg {
+  width: 35px;
+  height: 80px;
+  background: #22223b;
+  position: absolute;
+  bottom: -80px;
+  border-radius: 0 0 15px 15px;
+  box-shadow: inset -5px -5px 10px rgba(0,0,0,0.3);
+}
+
+.left-leg {
+  left: 35px;
+  animation: leg-move-left 4s infinite;
+}
+
+.right-leg {
+  right: 35px;
+  animation: leg-move-right 4s infinite 2s;
+}
+
+/* Shadow */
+.shadow {
+  width: 150px;
+  height: 20px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 50%;
+  margin-top: 50px;
+  filter: blur(5px);
+  animation: shadow-pulse 3s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes blink {
+  0%, 48%, 52%, 100% { height: 30px; }
+  50% { height: 5px; }
+}
+
+@keyframes talk {
+  0%, 40%, 60%, 100% { height: 10px; }
+  50% { height: 15px; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+}
+
+@keyframes light-red {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; box-shadow: 0 0 10px #ff6b6b; }
+}
+
+@keyframes light-yellow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; box-shadow: 0 0 10px #ffd166; }
+}
+
+@keyframes light-green {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; box-shadow: 0 0 10px #06d6a0; }
+}
+
+@keyframes arm-swing-left {
+  0%, 100% { transform: rotate(-20deg); }
+  50% { transform: rotate(30deg); }
+}
+
+@keyframes arm-swing-right {
+  0%, 100% { transform: rotate(20deg); }
+  50% { transform: rotate(-30deg); }
+}
+
+@keyframes leg-move-left {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+@keyframes leg-move-right {
+  0%, 100% { transform: rotate(5deg); }
+  50% { transform: rotate(-5deg); }
+}
+
+@keyframes shadow-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(0.8); opacity: 0.3; }
+}
+</style>       
                     <p>
 
 <section class="youtube-section">
